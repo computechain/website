@@ -24,6 +24,7 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#features" class="text-gray-700 hover:text-purple-600 transition">Features</a>
                     <a href="#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+                    <a href="#roadmap" class="text-gray-700 hover:text-purple-600 transition">Roadmap</a>
                     <a href="#links" class="text-gray-700 hover:text-purple-600 transition">Links</a>
                 </div>
             </div>
@@ -33,11 +34,19 @@
     <!-- Hero Section -->
     <section class="gradient-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <span class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse">
+                    ✅ Live Testnet
+                </span>
+            </div>
             <h1 class="text-5xl md:text-6xl font-bold mb-6">
                 Proof-of-Compute Blockchain
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-                Transforming idle GPUs into a decentralized supercomputer for useful computations
+            <p class="text-xl md:text-2xl mb-4 text-gray-100 max-w-3xl mx-auto">
+                A production-ready blockchain that transforms idle GPUs into a decentralized supercomputer for useful computations
+            </p>
+            <p class="text-sm mb-8 text-purple-100 max-w-2xl mx-auto">
+                ⚠️ Currently running on testnet. Use at your own risk.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://docs.computechain.space" target="_blank" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
@@ -54,32 +63,59 @@
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12">Key Features</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl mb-4">🔐</div>
                     <h3 class="text-xl font-semibold mb-3">Consensus & Security</h3>
-                    <ul class="text-gray-600 space-y-2">
+                    <ul class="text-gray-600 space-y-2 text-sm">
                         <li>• Multi-Validator PoA (Round-Robin)</li>
                         <li>• Post-Quantum ready signatures</li>
                         <li>• Deterministic block production</li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl mb-4">💸</div>
-                    <h3 class="text-xl font-semibold mb-3">Economics</h3>
-                    <ul class="text-gray-600 space-y-2">
+                    <h3 class="text-xl font-semibold mb-3">Economics & Gas</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
                         <li>• Ethereum-like Gas Model</li>
                         <li>• Gas-metered transactions</li>
-                        <li>• Staking & validator rewards</li>
+                        <li>• Commission-based rewards</li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl mb-4">🧠</div>
                     <h3 class="text-xl font-semibold mb-3">Proof-of-Compute</h3>
-                    <ul class="text-gray-600 space-y-2">
+                    <ul class="text-gray-600 space-y-2 text-sm">
                         <li>• Native ComputeTask/Result types</li>
                         <li>• Merkle verification in blocks</li>
                         <li>• GPU computation marketplace</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-xl font-semibold mb-3">Validator System</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Performance tracking & monitoring</li>
+                        <li>• Automated jailing & slashing</li>
+                        <li>• Real-time web dashboard</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-semibold mb-3">Delegation & Staking</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Stake CPC to become validator</li>
+                        <li>• Delegate tokens to validators</li>
+                        <li>• Early unjail mechanism</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-3">Proven Reliability</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• 100% test coverage (11 unit + E2E)</li>
+                        <li>• Graduated slashing (5% → 10% → 100%)</li>
+                        <li>• Minimum 75% uptime requirement</li>
                     </ul>
                 </div>
             </div>
@@ -92,26 +128,131 @@
             <h2 class="text-4xl font-bold text-center mb-8">About ComputeChain</h2>
             <div class="prose prose-lg mx-auto text-gray-700">
                 <p class="text-xl mb-6">
-                    <strong>ComputeChain</strong> is an experimental Layer-1 blockchain built around a new consensus and incentive model called <strong>Proof-of-Compute (PoC)</strong> — focused on executing <em>useful</em> GPU computations (targeting RTX 4090/5090 and later).
+                    <strong>ComputeChain</strong> is a Layer-1 blockchain built around a novel consensus and incentive model called <strong>Proof-of-Compute (PoC)</strong> — designed to execute <em>useful</em> GPU computations (targeting RTX 4090/5090 and later).
                 </p>
                 <p class="mb-6">
                     Unlike traditional Proof-of-Work blockchains that waste energy on meaningless hash calculations, ComputeChain enables GPU workers to earn native CPC tokens by performing verifiable, useful computations — from AI model training to 3D rendering.
                 </p>
                 <p class="mb-6">
-                    The network currently operates in <strong>Stage 4: Proof-of-Compute Framework</strong>, featuring stable multi-validator PoA consensus, post-quantum-ready signing architecture, and a gas-based economic model.
+                    The network features a battle-tested validator system with performance tracking, automated slashing, and comprehensive delegation support. Built with post-quantum-ready cryptography and an Ethereum-like gas model, ComputeChain is ready for real-world deployment.
                 </p>
-                <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded">
-                    <p class="font-semibold text-purple-900 mb-2">🎯 Vision</p>
-                    <p class="text-purple-800">
-                        Transform idle GPUs worldwide into a decentralized supercomputer accessible to everyone.
-                    </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
+                        <p class="font-semibold text-gray-900 mb-2">✅ What's Live</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Multi-validator PoA consensus</li>
+                            <li>• Validator performance system</li>
+                            <li>• Delegation & staking</li>
+                            <li>• Real-time dashboard</li>
+                            <li>• 100% test coverage</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-lg">
+                        <p class="font-semibold text-purple-900 mb-2">🎯 Vision</p>
+                        <p class="text-sm text-purple-800">
+                            Transform idle GPUs worldwide into a decentralized supercomputer accessible to everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Development Roadmap</h2>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 to-purple-300"></div>
+
+                <!-- Roadmap items -->
+                <div class="space-y-12">
+                    <!-- Completed -->
+                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                        <div class="md:text-right">
+                            <div class="bg-green-50 border-l-4 md:border-l-0 md:border-r-4 border-green-500 p-6 rounded-lg">
+                                <div class="flex items-center justify-between md:flex-row-reverse mb-2">
+                                    <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">✅ COMPLETED</span>
+                                    <h3 class="text-lg font-bold text-green-900">Core Blockchain Infrastructure</h3>
+                                </div>
+                                <ul class="text-sm text-green-800 space-y-1 mt-3">
+                                    <li>• Multi-validator PoA consensus</li>
+                                    <li>• Validator performance tracking & slashing</li>
+                                    <li>• Delegation & staking system</li>
+                                    <li>• Real-time monitoring dashboard</li>
+                                    <li>• Comprehensive test coverage (100%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                        <div class="hidden md:block"></div>
+                        <div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-bold text-blue-900">Full PoC Verification</h3>
+                                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">🔄 IN PROGRESS</span>
+                                </div>
+                                <ul class="text-sm text-blue-800 space-y-1 mt-3">
+                                    <li>• GPU computation verification pipeline</li>
+                                    <li>• Task distribution & scheduling</li>
+                                    <li>• Worker reputation system</li>
+                                    <li>• Compute marketplace integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Planned - Testnet -->
+                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                        <div class="md:text-right">
+                            <div class="bg-purple-50 border-l-4 md:border-l-0 md:border-r-4 border-purple-500 p-6 rounded-lg">
+                                <div class="flex items-center justify-between md:flex-row-reverse mb-2">
+                                    <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PLANNED</span>
+                                    <h3 class="text-lg font-bold text-purple-900">Public Testnet Launch</h3>
+                                </div>
+                                <ul class="text-sm text-purple-800 space-y-1 mt-3">
+                                    <li>• Public validator onboarding</li>
+                                    <li>• Testnet faucet & block explorer</li>
+                                    <li>• Bug bounty program</li>
+                                    <li>• Community stress testing</li>
+                                    <li>• Performance optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <!-- Planned - Advanced Features -->
+                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                        <div class="hidden md:block"></div>
+                        <div>
+                            <div class="bg-gray-50 border-l-4 border-gray-400 p-6 rounded-lg">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-bold text-gray-900">Advanced Features</h3>
+                                    <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PLANNED</span>
+                                </div>
+                                <ul class="text-sm text-gray-700 space-y-1 mt-3">
+                                    <li>• Governance & voting system</li>
+                                    <li>• Double-signing detection</li>
+                                    <li>• Advanced delegation features</li>
+                                    <li>• Cross-chain bridges</li>
+                                    <li>• Smart contract support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Links Section -->
-    <section id="links" class="py-20 bg-white">
+    <section id="links" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12">Resources</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -157,16 +298,14 @@
                         <li><a href="https://docs.computechain.space/testnet/join" target="_blank" class="hover:text-white transition">Testnet</a></li>
                     </ul>
                 </div>
-                <!-- <div>
-                    <h4 class="text-white font-semibold mb-4">Status</h4>
-                    <p class="text-sm">
-                        <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                        Stage 4: Proof-of-Compute Framework
-                    </p>
-                    <p class="text-sm mt-2 text-gray-400">
-                        Experimental • Under Active Development
-                    </p>
-                </div> -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/computechain/computechain/discussions" target="_blank" class="hover:text-white transition">Discussions</a></li>
+                        <li><a href="https://docs.computechain.space/testnet/bug-bounty" target="_blank" class="hover:text-white transition">Bug Bounty</a></li>
+                        <li><a href="https://twitter.com/computechain" target="_blank" class="hover:text-white transition">Twitter</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
                 <p>&copy; 2025 ComputeChain. MIT License.</p>
