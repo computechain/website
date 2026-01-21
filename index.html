@@ -5,23 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ComputeChain - Layer-1 blockchain for useful GPU computations">
     <title>ComputeChain - Proof-of-Compute Blockchain</title>
+    <link rel="canonical" href="https://computechain.space/">
+    <meta property="og:title" content="ComputeChain - Proof-of-Compute Blockchain">
+    <meta property="og:description" content="ComputeChain - Layer-1 blockchain for useful GPU computations">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://computechain.space/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ComputeChain - Proof-of-Compute Blockchain">
+    <meta name="twitter:description" content="ComputeChain - Layer-1 blockchain for useful GPU computations">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        main { max-width: 1200px; margin: 0 auto; }
+        main > section { padding-top: 4rem; padding-bottom: 4rem; }
+        .hero .max-w-7xl { max-width: 64rem; }
+        .about-wrap, .prose { max-width: 65ch; margin-left: auto; margin-right: auto; }
+        .features-grid, .resources-grid, .status-grid { gap: 1.5rem; }
+        .feature-card, .phase-card, .status-card, .resource-card, .phase-panel { padding: 1.5rem; }
+        .timeline-summary { margin-top: 2.5rem; }
+        .status-badge > span { outline: 1px solid rgba(255, 255, 255, 0.35); outline-offset: 2px; }
+        .status-card, .phase-card, .timeline-summary { outline: 1px solid rgba(0, 0, 0, 0.06); outline-offset: 0; }
+        .status-card, .timeline-summary { background-color: rgba(0, 0, 0, 0.015); }
+        .cta-group a:first-child { border: 1px solid rgba(0, 0, 0, 0.12); }
+        .timeline { position: relative; }
+        .timeline .space-y-12 { position: relative; }
+        .timeline .space-y-12 > .absolute { left: 50%; right: auto; transform: none; translate: -50% 0; }
+        .nav-bar { position: sticky; top: 0; width: 100vw; margin-left: calc(50% - 50vw); }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "ComputeChain",
+            "url": "https://computechain.space/",
+            "description": "ComputeChain - Layer-1 blockchain for useful GPU computations"
+        }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-900">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 nav-bar" aria-label="Primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
+                <div class="flex items-center brand">
                     <span class="text-2xl font-bold gradient-text">ComputeChain</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-8 nav-links" role="list">
                     <a href="#features" class="text-gray-700 hover:text-purple-600 transition">Features</a>
                     <a href="#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
                     <a href="#roadmap" class="text-gray-700 hover:text-purple-600 transition">Roadmap</a>
@@ -31,353 +74,361 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-4">
-                <span class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse">
-                    ✅ Live Testnet
-                </span>
+    <header role="banner">
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-20 hero" aria-labelledby="hero-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="mb-4 status-badge" role="status" aria-live="polite">
+                    <span class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse">
+                        ✅ Live Testnet
+                    </span>
+                </div>
+                <h1 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6">
+                    Proof-of-Compute Blockchain
+                </h1>
+                <p class="text-xl md:text-2xl mb-4 text-gray-100 max-w-3xl mx-auto">
+                    A production-ready blockchain that transforms idle GPUs into a decentralized supercomputer for useful computations
+                </p>
+                <p class="text-sm mb-8 text-purple-100 max-w-2xl mx-auto">
+                    ⚠️ Currently running on testnet. Use at your own risk.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center cta-group" role="group" aria-label="Primary actions">
+                    <a href="https://docs.computechain.space" target="_blank" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition" aria-label="Documentation (opens in a new tab)">
+                        📖 Documentation
+                    </a>
+                    <a href="https://github.com/computechain" target="_blank" class="bg-purple-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-900 transition" aria-label="GitHub (opens in a new tab)">
+                        💻 GitHub
+                    </a>
+                </div>
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                Proof-of-Compute Blockchain
-            </h1>
-            <p class="text-xl md:text-2xl mb-4 text-gray-100 max-w-3xl mx-auto">
-                A production-ready blockchain that transforms idle GPUs into a decentralized supercomputer for useful computations
-            </p>
-            <p class="text-sm mb-8 text-purple-100 max-w-2xl mx-auto">
-                ⚠️ Currently running on testnet. Use at your own risk.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://docs.computechain.space" target="_blank" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                    📖 Documentation
-                </a>
-                <a href="https://github.com/computechain" target="_blank" class="bg-purple-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-900 transition">
-                    💻 GitHub
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </header>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Key Features</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">🔐</div>
-                    <h3 class="text-xl font-semibold mb-3">Consensus & Security</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Multi-Validator PoA (Round-Robin)</li>
-                        <li>• Post-Quantum ready signatures</li>
-                        <li>• Deterministic block production</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">💸</div>
-                    <h3 class="text-xl font-semibold mb-3">Economics & Gas</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• <strong>Phase 1:</strong> Fixed Fee Model</li>
-                        <li>• <strong>Phase 2:</strong> EIP-1559 (Base + Priority Fee)</li>
-                        <li>• Commission-based rewards</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-semibold mb-3">Proof-of-Compute</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Multi-level GPU attestation (5 levels)</li>
-                        <li>• Anti-spoofing & fake GPU detection</li>
-                        <li>• Server-side benchmark verification</li>
-                        <li>• Native ComputeTask/Result types</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h3 class="text-xl font-semibold mb-3">Validator System</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Performance tracking & monitoring</li>
-                        <li>• Automated jailing & slashing</li>
-                        <li>• Real-time web dashboard</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-semibold mb-3">Delegation & Staking</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Stake CPC to become validator</li>
-                        <li>• Delegate tokens to validators</li>
-                        <li>• Early unjail mechanism</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold mb-3">Proven Reliability</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• 100% test coverage (25+ tests)</li>
-                        <li>• Graduated slashing (5% → 10% → 100%)</li>
-                        <li>• Deterministic slot-based consensus</li>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-semibold mb-3">Instant Finality <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
-                    <ul class="text-gray-700 space-y-2 text-sm">
-                        <li>• <strong>1 block = FINAL</strong> (Tendermint BFT)</li>
-                        <li>• 0 seconds finality (vs Bitcoin ~60 min)</li>
-                        <li>• No chain reorganizations</li>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">🔄</div>
-                    <h3 class="text-xl font-semibold mb-3">Transaction Lifecycle <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
-                    <ul class="text-gray-700 space-y-2 text-sm">
-                        <li>• Real-time TX receipts & confirmations</li>
-                        <li>• TX TTL (1 hour auto-cleanup)</li>
-                        <li>• HTTP polling event tracking</li>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-xl font-semibold mb-3">Monitoring & Metrics <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
-                    <ul class="text-gray-700 space-y-2 text-sm">
-                        <li>• Prometheus metrics (TX time, pending count)</li>
-                        <li>• Grafana dashboards</li>
-                        <li>• 97% TX confirmed < 10 seconds</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-8">About ComputeChain</h2>
-            <div class="prose prose-lg mx-auto text-gray-700">
-                <p class="text-xl mb-6">
-                    <strong>ComputeChain</strong> is a Layer-1 blockchain built around a novel consensus and incentive model called <strong>Proof-of-Compute (PoC)</strong> — designed to execute <em>useful</em> GPU computations with modern GPUs (RTX 3090+, RTX 4080+, A100, H100 and similar).
-                </p>
-                <p class="mb-6">
-                    Unlike traditional Proof-of-Work blockchains that waste energy on meaningless hash calculations, ComputeChain enables GPU workers to earn native CPC tokens by performing verifiable, useful computations — from AI model training to 3D rendering.
-                </p>
-                <p class="text-sm bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                    <strong>Testnet Requirements:</strong> Minimum 12 GB VRAM. Mainnet will require 16 GB VRAM for optimal performance.
-                </p>
-                <p class="mb-6">
-                    The network features a battle-tested validator system with performance tracking, automated slashing, and comprehensive delegation support. Built with post-quantum-ready cryptography and an Ethereum-like gas model, ComputeChain is ready for real-world deployment.
-                </p>
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
-                        <p class="font-semibold text-gray-900 mb-2">✅ What's Live</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Multi-validator PoA consensus</li>
-                            <li>• Validator performance system</li>
-                            <li>• Delegation & staking</li>
-                            <li>• Real-time dashboard</li>
-                            <li>• 100% test coverage</li>
-                        </ul>
-                    </div>
-                    <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-lg">
-                        <p class="font-semibold text-purple-900 mb-2">🎯 Vision</p>
-                        <p class="text-sm text-purple-800">
-                            Transform idle GPUs worldwide into a decentralized supercomputer accessible to everyone.
+    <main role="main">
+        <!-- Proof-of-Compute Value Pillars -->
+        <section id="about" class="py-20 bg-gray-50" aria-labelledby="about-title">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 about-wrap">
+                <h2 id="about-title" class="text-4xl font-bold text-center mb-8">About ComputeChain</h2>
+                <div class="prose prose-lg mx-auto text-gray-700 about-copy">
+                    <div class="value-panel">
+                        <p class="text-xl mb-6">
+                            <strong>ComputeChain</strong> is a Layer-1 blockchain built around a novel consensus and incentive model called <strong>Proof-of-Compute (PoC)</strong> — designed to execute <em>useful</em> GPU computations with modern GPUs (RTX 3090+, RTX 4080+, A100, H100 and similar).
+                        </p>
+                        <p class="mb-6">
+                            Unlike traditional Proof-of-Work blockchains that waste energy on meaningless hash calculations, ComputeChain enables GPU workers to earn native CPC tokens by performing verifiable, useful computations — from AI model training to 3D rendering.
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Development Roadmap</h2>
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 to-purple-300"></div>
-
-                <!-- Roadmap items -->
-                <div class="space-y-12">
-                    <!-- Phase 1: Production-Ready L1 (Mostly Complete) -->
-                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
-                        <div class="md:text-right">
-                            <div class="bg-green-50 border-l-4 md:border-l-0 md:border-r-4 border-green-500 p-6 rounded-lg">
-                                <div class="flex items-center justify-between md:flex-row-reverse mb-2">
-                                    <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">✅ PHASE 1 COMPLETE</span>
-                                    <h3 class="text-lg font-bold text-green-900">Production-Ready L1</h3>
-                                </div>
-                                <p class="text-xs text-green-700 mb-2">Completed: January 2026</p>
-                                <ul class="text-sm text-green-800 space-y-1 mt-3">
-                                    <li>✅ Multi-validator PoA consensus</li>
-                                    <li>✅ Individual delegation tracking</li>
-                                    <li>✅ Proportional reward distribution</li>
-                                    <li>✅ Commission-based rewards</li>
-                                    <li>✅ Graduated slashing (5%→10%→100%)</li>
-                                    <li>✅ Real-time monitoring dashboard</li>
-                                    <li>✅ 21-day unbonding period</li>
-                                    <li>✅ State snapshots & fast sync</li>
-                                    <li>✅ Observability stack (Prometheus/Grafana)</li>
-                                    <li>✅ Deterministic slot-based consensus</li>
-                                </ul>
-                            </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <h2 id="status-title" class="sr-only">What’s Live / Testnet status</h2>
+                    <p class="text-sm bg-blue-50 border-l-4 border-blue-500 p-4 rounded requirements-callout">
+                        <strong>Testnet Requirements:</strong> Minimum 12 GB VRAM. Mainnet will require 16 GB VRAM for optimal performance.
+                    </p>
+                    <p class="mb-6">
+                        The network features a battle-tested validator system with performance tracking, automated slashing, and comprehensive delegation support. Built with post-quantum-ready cryptography and an Ethereum-like gas model, ComputeChain is ready for real-world deployment.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6 status-grid" role="list">
+                        <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm status-card" role="listitem">
+                            <p class="font-semibold text-gray-900 mb-2">✅ What's Live</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Multi-validator PoA consensus</li>
+                                <li>• Validator performance system</li>
+                                <li>• Delegation & staking</li>
+                                <li>• Real-time dashboard</li>
+                                <li>• 100% test coverage</li>
+                            </ul>
                         </div>
-                        <div class="hidden md:block"></div>
-                    </div>
-
-                    <!-- Phase 2A: PoC Core (In Progress) -->
-                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
-                        <div class="hidden md:block"></div>
-                        <div>
-                            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-lg font-bold text-blue-900">Proof-of-Compute Core</h3>
-                                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">🔄 PHASE 2A</span>
-                                </div>
-                                <p class="text-xs text-blue-700 mb-2">Duration: 2 months • IN PROGRESS</p>
-                                <ul class="text-sm text-blue-800 space-y-1 mt-3">
-                                    <li>• Multi-level GPU attestation (5 levels)</li>
-                                    <li>• NVIDIA driver & hardware whitelists</li>
-                                    <li>• Server-side benchmark verification</li>
-                                    <li>• Anti-spoofing (fake GPU detection)</li>
-                                    <li>• Worker qualification system (12GB+ VRAM)</li>
-                                    <li>• Matrix multiplication use case</li>
-                                    <li>• Task distribution & verification</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phase 2B: Marketplace (Optional) -->
-                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
-                        <div class="md:text-right">
-                            <div class="bg-purple-50 border-l-4 md:border-l-0 md:border-r-4 border-purple-400 p-6 rounded-lg opacity-75">
-                                <div class="flex items-center justify-between md:flex-row-reverse mb-2">
-                                    <span class="bg-purple-400 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASE 2B</span>
-                                    <h3 class="text-lg font-bold text-purple-900">Compute Marketplace</h3>
-                                </div>
-                                <p class="text-xs text-purple-700 mb-2">Duration: 2 months • Optional for MVP</p>
-                                <ul class="text-sm text-purple-800 space-y-1 mt-3">
-                                    <li>• Task posting & escrow</li>
-                                    <li>• Worker bidding system</li>
-                                    <li>• Payment settlement</li>
-                                    <li>• Dispute resolution</li>
-                                    <li>• Arbitration by validators</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="hidden md:block"></div>
-                    </div>
-
-                    <!-- Phase 3: Public Testnet -->
-                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
-                        <div class="hidden md:block"></div>
-                        <div>
-                            <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-lg font-bold text-indigo-900">Public Testnet Launch</h3>
-                                    <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASE 3</span>
-                                </div>
-                                <p class="text-xs text-indigo-700 mb-2">Duration: 2 months</p>
-                                <ul class="text-sm text-indigo-800 space-y-1 mt-3">
-                                    <li>• 50+ community validators</li>
-                                    <li>• Block explorer & faucet</li>
-                                    <li>• Bug bounty program</li>
-                                    <li>• Load testing (1000 TPS)</li>
-                                    <li>• Public monitoring dashboard</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phase 4-6: Path to Mainnet -->
-                    <div class="relative grid md:grid-cols-2 gap-8 items-center">
-                        <div class="md:text-right">
-                            <div class="bg-gray-50 border-l-4 md:border-l-0 md:border-r-4 border-gray-400 p-6 rounded-lg">
-                                <div class="flex items-center justify-between md:flex-row-reverse mb-2">
-                                    <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASES 4-6</span>
-                                    <h3 class="text-lg font-bold text-gray-900">Mainnet Preparation</h3>
-                                </div>
-                                <p class="text-xs text-gray-700 mb-2">Duration: 5 months</p>
-                                <ul class="text-sm text-gray-700 space-y-1 mt-3">
-                                    <li>• Governance & on-chain voting</li>
-                                    <li>• Security audits (consensus, economic model)</li>
-                                    <li>• Tokenomics finalization</li>
-                                    <li>• Legal entity formation</li>
-                                    <li>• Exchange partnerships</li>
-                                    <li>• Mainnet genesis & launch</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- Timeline Summary -->
-                <div class="mt-12 bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-center mb-4 text-gray-900">Timeline to Mainnet: ~12 Months</h3>
-                    <div class="flex flex-wrap justify-center gap-4 text-sm">
-                        <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                            <span class="font-semibold text-green-600">Phase 1:</span> 2 months
-                        </div>
-                        <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                            <span class="font-semibold text-blue-600">Phase 2A:</span> 2 months
-                        </div>
-                        <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                            <span class="font-semibold text-purple-600">Phase 2B:</span> 2 months (optional)
-                        </div>
-                        <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                            <span class="font-semibold text-indigo-600">Phase 3:</span> 2 months
-                        </div>
-                        <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                            <span class="font-semibold text-gray-600">Phases 4-6:</span> 5 months
+                        <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-lg status-card" role="listitem">
+                            <p class="font-semibold text-purple-900 mb-2">🎯 Vision</p>
+                            <p class="text-sm text-purple-800">
+                                Transform idle GPUs worldwide into a decentralized supercomputer accessible to everyone.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Links Section -->
-    <section id="links" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Resources</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="https://docs.computechain.space" target="_blank" class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-3xl mb-3">📖</div>
-                    <h3 class="font-semibold text-lg mb-2">Documentation</h3>
-                    <p class="text-sm text-purple-100">Full technical docs, guides, and API reference</p>
-                </a>
-                <a href="https://github.com/computechain" target="_blank" class="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-3xl mb-3">💻</div>
-                    <h3 class="font-semibold text-lg mb-2">GitHub</h3>
-                    <p class="text-sm text-gray-300">Source code and repositories</p>
-                </a>
-                <a href="https://docs.computechain.space/testnet/join" target="_blank" class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-3xl mb-3">🧪</div>
-                    <h3 class="font-semibold text-lg mb-2">Testnet</h3>
-                    <p class="text-sm text-blue-100">Join the testnet and start testing</p>
-                </a>
-                <a href="https://docs.computechain.space/testnet/bug-bounty" target="_blank" class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="text-3xl mb-3">🐛</div>
-                    <h3 class="font-semibold text-lg mb-2">Bug Bounty</h3>
-                    <p class="text-sm text-red-100">Report security issues</p>
-                </a>
+        <!-- Features Section (Condensed) -->
+        <section id="features" class="py-20 bg-white" aria-labelledby="features-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="features-title" class="text-4xl font-bold text-center mb-12">Key Features</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 features-grid">
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">🔐</div>
+                        <h3 class="text-xl font-semibold mb-3">Consensus & Security</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• Multi-Validator PoA (Round-Robin)</li>
+                            <li>• Post-Quantum ready signatures</li>
+                            <li>• Deterministic block production</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">💸</div>
+                        <h3 class="text-xl font-semibold mb-3">Economics & Gas</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• <strong>Phase 1:</strong> Fixed Fee Model</li>
+                            <li>• <strong>Phase 2:</strong> EIP-1559 (Base + Priority Fee)</li>
+                            <li>• Commission-based rewards</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">🧠</div>
+                        <h3 class="text-xl font-semibold mb-3">Proof-of-Compute</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• Multi-level GPU attestation (5 levels)</li>
+                            <li>• Anti-spoofing & fake GPU detection</li>
+                            <li>• Server-side benchmark verification</li>
+                            <li>• Native ComputeTask/Result types</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h3 class="text-xl font-semibold mb-3">Validator System</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• Performance tracking & monitoring</li>
+                            <li>• Automated jailing & slashing</li>
+                            <li>• Real-time web dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h3 class="text-xl font-semibold mb-3">Delegation & Staking</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• Stake CPC to become validator</li>
+                            <li>• Delegate tokens to validators</li>
+                            <li>• Early unjail mechanism</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition transform hover:-translate-y-1 feature-card">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h3 class="text-xl font-semibold mb-3">Proven Reliability</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li>• 100% test coverage (25+ tests)</li>
+                            <li>• Graduated slashing (5% → 10% → 100%)</li>
+                            <li>• Deterministic slot-based consensus</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1 feature-card phase-card">
+                        <div class="text-4xl mb-4">⚡</div>
+                        <h3 class="text-xl font-semibold mb-3">Instant Finality <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
+                        <ul class="text-gray-700 space-y-2 text-sm">
+                            <li>• <strong>1 block = FINAL</strong> (Tendermint BFT)</li>
+                            <li>• 0 seconds finality (vs Bitcoin ~60 min)</li>
+                            <li>• No chain reorganizations</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1 feature-card phase-card">
+                        <div class="text-4xl mb-4">🔄</div>
+                        <h3 class="text-xl font-semibold mb-3">Transaction Lifecycle <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
+                        <ul class="text-gray-700 space-y-2 text-sm">
+                            <li>• Real-time TX receipts & confirmations</li>
+                            <li>• TX TTL (1 hour auto-cleanup)</li>
+                            <li>• HTTP polling event tracking</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1 feature-card phase-card">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-xl font-semibold mb-3">Monitoring & Metrics <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full ml-2">Phase 1.4</span></h3>
+                        <ul class="text-gray-700 space-y-2 text-sm">
+                            <li>• Prometheus metrics (TX time, pending count)</li>
+                            <li>• Grafana dashboards</li>
+                            <li>• 97% TX confirmed < 10 seconds</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 bg-white" aria-labelledby="roadmap-title">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="roadmap-title" class="text-4xl font-bold text-center mb-12">Development Roadmap</h2>
+                <div class="relative timeline" role="list">
+                    <!-- Roadmap items -->
+                    <div class="space-y-12" role="list">
+                        <!-- Timeline line -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 to-purple-300"></div>
+                        <!-- Phase 1: Production-Ready L1 (Mostly Complete) -->
+                        <div class="relative grid md:grid-cols-2 gap-8 items-center" role="listitem">
+                            <div class="md:text-right">
+                                <div class="bg-green-50 border-l-4 md:border-l-0 md:border-r-4 border-green-500 p-6 rounded-lg phase-panel">
+                                    <div class="flex items-center justify-between md:flex-row-reverse mb-2">
+                                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">✅ PHASE 1 COMPLETE</span>
+                                        <h3 class="text-lg font-bold text-green-900">Production-Ready L1</h3>
+                                    </div>
+                                    <p class="text-xs text-green-700 mb-2">Completed: January 2026</p>
+                                    <ul class="text-sm text-green-800 space-y-1 mt-3">
+                                        <li>✅ Multi-validator PoA consensus</li>
+                                        <li>✅ Individual delegation tracking</li>
+                                        <li>✅ Proportional reward distribution</li>
+                                        <li>✅ Commission-based rewards</li>
+                                        <li>✅ Graduated slashing (5%→10%→100%)</li>
+                                        <li>✅ Real-time monitoring dashboard</li>
+                                        <li>✅ 21-day unbonding period</li>
+                                        <li>✅ State snapshots & fast sync</li>
+                                        <li>✅ Observability stack (Prometheus/Grafana)</li>
+                                        <li>✅ Deterministic slot-based consensus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+
+                        <!-- Phase 2A: PoC Core (In Progress) -->
+                        <div class="relative grid md:grid-cols-2 gap-8 items-center" role="listitem">
+                            <div class="hidden md:block"></div>
+                            <div>
+                                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg phase-panel">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="text-lg font-bold text-blue-900">Proof-of-Compute Core</h3>
+                                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">🔄 PHASE 2A</span>
+                                    </div>
+                                    <p class="text-xs text-blue-700 mb-2">Duration: 2 months • IN PROGRESS</p>
+                                    <ul class="text-sm text-blue-800 space-y-1 mt-3">
+                                        <li>• Multi-level GPU attestation (5 levels)</li>
+                                        <li>• NVIDIA driver & hardware whitelists</li>
+                                        <li>• Server-side benchmark verification</li>
+                                        <li>• Anti-spoofing (fake GPU detection)</li>
+                                        <li>• Worker qualification system (12GB+ VRAM)</li>
+                                        <li>• Matrix multiplication use case</li>
+                                        <li>• Task distribution & verification</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2B: Marketplace (Optional) -->
+                        <div class="relative grid md:grid-cols-2 gap-8 items-center" role="listitem">
+                            <div class="md:text-right">
+                                <div class="bg-purple-50 border-l-4 md:border-l-0 md:border-r-4 border-purple-400 p-6 rounded-lg opacity-75 phase-panel">
+                                    <div class="flex items-center justify-between md:flex-row-reverse mb-2">
+                                        <span class="bg-purple-400 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASE 2B</span>
+                                        <h3 class="text-lg font-bold text-purple-900">Compute Marketplace</h3>
+                                    </div>
+                                    <p class="text-xs text-purple-700 mb-2">Duration: 2 months • Optional for MVP</p>
+                                    <ul class="text-sm text-purple-800 space-y-1 mt-3">
+                                        <li>• Task posting & escrow</li>
+                                        <li>• Worker bidding system</li>
+                                        <li>• Payment settlement</li>
+                                        <li>• Dispute resolution</li>
+                                        <li>• Arbitration by validators</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+
+                        <!-- Phase 3: Public Testnet -->
+                        <div class="relative grid md:grid-cols-2 gap-8 items-center" role="listitem">
+                            <div class="hidden md:block"></div>
+                            <div>
+                                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg phase-panel">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="text-lg font-bold text-indigo-900">Public Testnet Launch</h3>
+                                        <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASE 3</span>
+                                    </div>
+                                    <p class="text-xs text-indigo-700 mb-2">Duration: 2 months</p>
+                                    <ul class="text-sm text-indigo-800 space-y-1 mt-3">
+                                        <li>• 50+ community validators</li>
+                                        <li>• Block explorer & faucet</li>
+                                        <li>• Bug bounty program</li>
+                                        <li>• Load testing (1000 TPS)</li>
+                                        <li>• Public monitoring dashboard</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 4-6: Path to Mainnet -->
+                        <div class="relative grid md:grid-cols-2 gap-8 items-center" role="listitem">
+                            <div class="md:text-right">
+                                <div class="bg-gray-50 border-l-4 md:border-l-0 md:border-r-4 border-gray-400 p-6 rounded-lg phase-panel">
+                                    <div class="flex items-center justify-between md:flex-row-reverse mb-2">
+                                        <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-xs font-semibold">📋 PHASES 4-6</span>
+                                        <h3 class="text-lg font-bold text-gray-900">Mainnet Preparation</h3>
+                                    </div>
+                                    <p class="text-xs text-gray-700 mb-2">Duration: 5 months</p>
+                                    <ul class="text-sm text-gray-700 space-y-1 mt-3">
+                                        <li>• Governance & on-chain voting</li>
+                                        <li>• Security audits (consensus, economic model)</li>
+                                        <li>• Tokenomics finalization</li>
+                                        <li>• Legal entity formation</li>
+                                        <li>• Exchange partnerships</li>
+                                        <li>• Mainnet genesis & launch</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Summary -->
+                    <div class="mt-12 bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 p-6 rounded-xl timeline-summary">
+                        <h3 class="font-bold text-center mb-4 text-gray-900">Timeline to Mainnet: ~12 Months</h3>
+                        <div class="flex flex-wrap justify-center gap-4 text-sm">
+                            <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                                <span class="font-semibold text-green-600">Phase 1:</span> 2 months
+                            </div>
+                            <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                                <span class="font-semibold text-blue-600">Phase 2A:</span> 2 months
+                            </div>
+                            <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                                <span class="font-semibold text-purple-600">Phase 2B:</span> 2 months (optional)
+                            </div>
+                            <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                                <span class="font-semibold text-indigo-600">Phase 3:</span> 2 months
+                            </div>
+                            <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                                <span class="font-semibold text-gray-600">Phases 4-6:</span> 5 months
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links Section -->
+        <section id="links" class="py-20 bg-gray-50" aria-labelledby="resources-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="resources-title" class="text-4xl font-bold text-center mb-12">Resources</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 resources-grid">
+                    <a href="https://docs.computechain.space" target="_blank" class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1 resource-card" aria-label="Documentation (opens in a new tab)">
+                        <div class="text-3xl mb-3">📖</div>
+                        <h3 class="font-semibold text-lg mb-2">Documentation</h3>
+                        <p class="text-sm text-purple-100">Full technical docs, guides, and API reference</p>
+                    </a>
+                    <a href="https://github.com/computechain" target="_blank" class="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1 resource-card" aria-label="GitHub (opens in a new tab)">
+                        <div class="text-3xl mb-3">💻</div>
+                        <h3 class="font-semibold text-lg mb-2">GitHub</h3>
+                        <p class="text-sm text-gray-300">Source code and repositories</p>
+                    </a>
+                    <a href="https://docs.computechain.space/testnet/join" target="_blank" class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1 resource-card" aria-label="Testnet (opens in a new tab)">
+                        <div class="text-3xl mb-3">🧪</div>
+                        <h3 class="font-semibold text-lg mb-2">Testnet</h3>
+                        <p class="text-sm text-blue-100">Join the testnet and start testing</p>
+                    </a>
+                    <a href="https://docs.computechain.space/testnet/bug-bounty" target="_blank" class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 rounded-xl hover:shadow-xl transition transform hover:-translate-y-1 resource-card" aria-label="Bug Bounty (opens in a new tab)">
+                        <div class="text-3xl mb-3">🐛</div>
+                        <h3 class="font-semibold text-lg mb-2">Bug Bounty</h3>
+                        <p class="text-sm text-red-100">Report security issues</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <footer class="bg-gray-900 text-gray-300 py-12" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 footer-grid">
                 <div>
                     <h3 class="text-white font-bold text-xl mb-4">ComputeChain</h3>
                     <p class="text-sm">
                         Layer-1 blockchain for useful GPU computations
                     </p>
                 </div>
-                <div>
+                <div class="footer-links">
                     <h4 class="text-white font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="https://docs.computechain.space" target="_blank" class="hover:text-white transition">Documentation</a></li>
@@ -385,7 +436,7 @@
                         <li><a href="https://docs.computechain.space/testnet/join" target="_blank" class="hover:text-white transition">Testnet</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="footer-links">
                     <h4 class="text-white font-semibold mb-4">Community</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="https://github.com/computechain/computechain/discussions" target="_blank" class="hover:text-white transition">Discussions</a></li>
@@ -394,7 +445,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400 footer-meta">
                 <p>&copy; 2025-2026 ComputeChain. MIT License.</p>
             </div>
         </div>
@@ -414,4 +465,3 @@
     </script>
 </body>
 </html>
-
